@@ -1,21 +1,22 @@
-ici on as un binaire et un fichier token
+Ici, on a un binaire et un fichier token.
 
 On test
 ```bash
 ./level09 token
 ```
-On as une string mais ca ne marche pas
+On a une string mais ça ne marche pas.
 
-On cat `token`
+On utilise cat sur le fichier `token`.
 
-On as une string mais ave des characteres bizare comme si on avais depasser la memoire,
+On a une string mais avec des characteres bizare comme si on avait depassé la memoire.
 
-on fait donc un petit programe pour me convertire ma chaine:
+On fait donc un petit programme pour convertire la chaine de caractères:
 `prog1.c`
-Cala ne marche pas
+Cala ne marche pas.
 
-apres avoir tester le binaire `level09` on comprend comment convertire la chaine, le decalage est exponanciel
-On fait donc un petit programe
+Après avoir testé le binaire `level09` on comprend comment convertir la chaine, le décalage correspond à i += 1 avec i commencant à zero.
+
+On fait donc un petit programme
 `prog2.c`
 
 Ca marche ! 
