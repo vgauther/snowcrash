@@ -10,7 +10,7 @@ Sur la trame 43 on trouve un `pas sword`
 On suit la trame.
 On trouve `ft_wandr...NDRel.L0L`
 
-On test ca ne marche pas, après quelques recherche on découvre que les `.` sont des supressions 
+On test ça ne marche pas, après quelques recherche on découvre que les `.` sont des supressions 
 Donc ça fait `ft_waNDReL0L`
 
 On test, ça marche ! 
