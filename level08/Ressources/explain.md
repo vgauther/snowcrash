@@ -1,15 +1,18 @@
-(celui la on as eu beaucoup de chance)
+On a un binaire `level08` et un fichier `token`.
 
-On as un binaire `level08` et on fichier `token`
-on test :
+On test :
 ```bash
 ./level08 token
 ```
-Cela nous renvoie
+
+Cela nous renvoie :
 `You may not access 'token'`
 
-On renome le fohcier `token` en `test`
-On fait 
+On essaye de copier le token ailleurs, de faire un lien symbolique. Rien ne marche.
+
+On renomme le ficher `token` en `test`
+
+On fait :
 ```bash
 ./level08 test
 ```
