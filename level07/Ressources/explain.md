@@ -1,12 +1,12 @@
-ici on as un executable on l'execute cela affiche `levvel07`
+Ici, on a un executable. On l'execute cela affiche `level07`
 
 On test de le renomer cela affiche toujours `level07`
 
 On fait un `nm`  rien d'interessant
 
-On utilise `stings`, le binaire utilise `getenv` et `LOGNAME`
+On utilise `strings`, le binaire utilise `getenv` et `LOGNAME`
 
-On tet de redefinir `LOGNAME` en `test` cela fonctione
+On test de redefinir `LOGNAME` en `test` cela fonctione
 
 on test avec 
 
