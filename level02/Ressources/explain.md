@@ -1,16 +1,16 @@
 On trouve dans le dossier du level02 un fichier pcap
 
-On regarde, on peut l'ouvrir avec `WhireShark`
+On regarde ce que c'est. On voit qu'on peut l'ouvrir avec `WhireShark`
 
-On le copie sur le mac et on l'ouvre
+On le copie sur le mac et on l'ouvre.
 
-On regarde toute les trame
+On regarde toutes les trames.
 
-Sur la trame 43 on trouuve un `pas sword`
-On suis la trame
+Sur la trame 43 on trouve un `pas sword`
+On suit la trame.
 On trouve `ft_wandr...NDRel.L0L`
 
-On test ca ne marche pas, apres quelques recherche on sais que les `.` sont des supressions 
-Donc ca fait `ft_waNDReL0L`
+On test ca ne marche pas, après quelques recherche on découvre que les `.` sont des supressions 
+Donc ça fait `ft_waNDReL0L`
 
-On test, ca marche ! 
+On test, ça marche ! 
