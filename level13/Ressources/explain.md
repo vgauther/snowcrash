@@ -1,24 +1,24 @@
-on se connect au level13
+On se connect au level13.
 
-on voit un executable
+On voit un executable.
 
-on l'execute
+On l'execute.
 
 ```
 UID 2013 started us but we we expect 4242
 ```
 
-On ne comprends pas grands chose
+On ne comprend pas grands chose.
 
-On utilise strings.
+On utilise `strings`.
 
-On decouvre plusieurs chose. On comprends que c'est du C compilé. On voit également qu'il existe une fontion getuid. Et qu'il y a ecrit libc.so
+On découvre plusieurs choses. On comprends que c'est du C compilé. On voit également qu'il existe une fontion getuid. Et qu'il y a ecrit libc.so
 
-On cherche et on decouvre que c'est une lib partagé on decide de creer nous aussi une lib partage pour remplacer getuid par un une fonction qui retournerai 4242 mais apres plusieurs essaie, rien n'avance
+On cherche et on découvre que c'est une lib partagée. On décide de créer nous aussi une lib partagé pour remplacer getuid par un une fonction qui retournerai 4242 mais aprés plusieurs essaies, rien ne marche.
 
-On decide alors de prendre le problème a l'envers et de modifier la variable pendant l'execution. Apres des recherche, on decouvre gdb. Et on execute le programe avec.
+On décide alors de prendre le problème à l'envers et de modifier la variable pendant l'execution. Après des recherches, on découvre gdb. Et on execute le programe avec.
 
-En utilisant disas main on voit
+En utilisant `disas main` on voit :
 
 ```
 0x0804858c <+0>:	push   %ebp
@@ -46,9 +46,9 @@ En utilisant disas main on voit
   0x080485e9 <+93>:	ret
  ```
 
- On comprends que la fonction getuid est utilisé. On decouvre qu'il est possible de stoppé un executable à un moment precis pour modifier une variable.
+On comprend que la fonction getuid est utilisé. On decouvre qu'il est possible de stoppé un executable à un moment précis pour modifier une variable.
 
- On decide de l'arreter juste apres getuid
+ On décide de l'arrêter juste apres getuid :
 
  ```
 	b *main+14
@@ -60,15 +60,15 @@ En utilisant disas main on voit
 	p $eax
 ```
 
-et on voit bien 2013
+et on voit bien 2013.
 
-on decide de la changer en 4242
+On décide de la changer en 4242.
 
 ```
 set $eax=4242
 ```
 
-on fait continu
+On fait continue
 
 ```
 c
