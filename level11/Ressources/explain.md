@@ -1,8 +1,8 @@
-on se connecte au level11
+On se connecte au level11
 
-avec le ls on decouvre un fichier .lua
+Avec le ls, on decouvre un fichier .lua
 
-on cherche et pour l'executer on doit entrer
+On cherche et pour l'executer on doit entrer
 
 ```
 lua level11.lua
@@ -30,9 +30,9 @@ On execute
 nc localhost 5151
 `
 
-On nous demande un mot de passe, nous comprennons donc qu'un server tourne à cette adresse
+On nous demande un mot de passe, nous comprennons donc qu'un server tourne à cette adresse.
 
-On regarde sur le navigateur mais il n'y a rien
+On regarde sur le navigateur mais il n'y a rien.
 
 On essaye de rentrer un mot de passe
 
@@ -40,23 +40,23 @@ On essaye de rentrer un mot de passe
 
 à savoir un code présent dans le fichier. Cela ne marche pas non plus.
 
-On essaye donc de comprendre le code
+On essaye donc de comprendre le code.
 
 En commencent par io.popen.
 
 En faisant une recherche on trouve que le flag 'r' va simplement executer la commande qu'on lui passe.
 
-C'est bon nous avions compris, il n'y avait qu'à injecter la commande getflag
+C'est bon nous avons compris, il n'y a qu'à injecter la commande `getflag`
 
-on met donc en mot de passe
+On met donc en mot de passe
 
 `getflag`
 
-mais rien ne se passe
+mais rien ne se passe.
 
-nous avons fini par comprendre que l'output du programme ne se ferrait pas sur notre terminal mais sur celui du serveur
+Nous avons fini par comprendre que l'output du programme ne se ferrait pas sur notre terminal mais sur celui du serveur.
 
-nous avons donc chercher un moyen de broadcast un message. Nous avons trouvé wall.
+Nous avons donc chercher un moyen de broadcast un message. Nous avons trouvé wall.
 
 En utilisant :
 
@@ -64,7 +64,7 @@ En utilisant :
 wall "test"
 ```
 
-On a compris que ça ne marchait pas comme ça
+On a compris que ça ne marchait pas comme ça.
 
 Il fallait faire
 
@@ -72,18 +72,18 @@ Il fallait faire
 echo "test" | wall
 ```
 
-et effet nous avions un message qui apparaissait
+et enfin nous avons un message qui apparait
 
-on a donc decidé de mettre en mot de passe
+On a donc decidé de mettre en mot de passe
 
 ```
 getflag | wall
 ```
-mais ça ne fonctionnait toujours pas
+mais ça ne fonctionnait toujours pas.
 
-en relisant le code on a compris qu'il fallait empecher le echo de fonctionner.
+En relisant le code on a compris qu'il fallait empécher le echo de fonctionner.
 
-on a donc mis en mot de passe
+O a donc mis en mot de passe
 
 ```
 ; getflag | wall
